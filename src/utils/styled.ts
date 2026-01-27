@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-restricted-imports
 import emotionStyled, { type StyledOptions } from '@emotion/styled';
 
 const transientOptions = {
