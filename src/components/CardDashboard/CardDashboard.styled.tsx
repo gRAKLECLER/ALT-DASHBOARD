@@ -1,9 +1,9 @@
-import { Card } from "@mui/material";
+
 import styled from '../../utils/styled';
-import { TrendingUp } from "@mui/icons-material";
 
-export const Container = styled(Card)`
-`
-
-export const IconCard =  styled(TrendingUp)`
+export const Container = styled('div')`
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
 `

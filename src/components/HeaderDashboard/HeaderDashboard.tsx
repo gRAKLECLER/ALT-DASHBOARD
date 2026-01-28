@@ -10,14 +10,15 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Container } from './HeaderDashboard.styled';
-import { Typography } from '@mui/material';
+import { Container, Content, FlexBox } from './HeaderDashboard.styled';
+import BoltIcon from '@mui/icons-material/Bolt';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SettingsIcon from '@mui/icons-material/Settings';
+import { Link } from 'react-router-dom';
+// import { Typography } from '@mui/material';
 
-interface Iprops {
-    children: React.ReactNode
-}
-
-export const HeaderDashboard = ({children}: Iprops) => {
+export const HeaderDashboard = () => {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -57,11 +58,29 @@ export const HeaderDashboard = ({children}: Iprops) => {
   return (
     <Container>
       <Button onClick={toggleDrawer(true)} sx={{display: { xs: 'block', sm: 'block', md: 'none', lg: 'none' }}}>Open drawer</Button>
-      <Typography  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>Logo</Typography>
+      <Content  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>
+        <FlexBox>
+            <Link to="/">
+                <BoltIcon/>
+                <span>TechCorp</span>
+            </Link>
+        </FlexBox>
+        <FlexBox>
+            <Link to="/">Dashboard</Link>
+            <Link to="/tools">Tools</Link>
+            <Link to="/analytics">Analytics</Link>
+            <Link to="/settings">Settings</Link>
+        </FlexBox>
+      </Content>
+      <Content  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>
+        <input type="text" />
+        <BedtimeIcon/>
+        <NotificationsIcon/>
+        <SettingsIcon/>
+      </Content>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
-      {children}
     </Container>
   );
 }

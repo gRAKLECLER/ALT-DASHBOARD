@@ -4,6 +4,7 @@ import type { DashboardAnalyticsResponse } from '../../types/analytics';
 import axios from 'axios';
 import type { Department } from '../../types/department';
 import type { Tools } from '../../types/tools';
+import { Container } from './CardDashboard.styled';
 
 
 
@@ -47,11 +48,11 @@ export const CardDashboard = () => {
   
   
     return (
-      <>
+      <Container>
         <Card title='Monthly Budget' text={`${data?.budget_overview.current_month_total}`} data={data?.kpi_trends.budget_change ?? ''}/>
         <Card title='Active tools' text={`${tools?.length}`} data={data?.kpi_trends.tools_change ?? ''}/>
         <Card title='Department' text={`${departments?.length}`} data={data?.kpi_trends.departments_change ?? ''}/>
         <Card title='Cost/User' text={`${data?.cost_analytics.cost_per_user}`} data={data?.kpi_trends.cost_per_user_change ?? ''}/>
-      </>
+      </Container>
     )
 }

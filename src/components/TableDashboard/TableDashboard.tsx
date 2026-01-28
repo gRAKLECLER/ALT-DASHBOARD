@@ -27,7 +27,7 @@ export const TableDashboard = () => {
 
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ width: '85%' }}>
     <Box sx={{ padding: '1rem' }}>
     <Typography variant='h5' sx={{ textAlign: 'start' }}>Recent Tools</Typography>
     </Box>
