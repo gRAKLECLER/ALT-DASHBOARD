@@ -7,15 +7,23 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Box, Typography } from '@mui/material';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Tools } from '../../types/tools';
 
 export const TableDashboard = () => {
     const [data, setData] = useState<Tools[]>([])
 
-    axios.get('https://tt-jsonserver-01.alt-tools.tech/tools').then(item => {
-        setData(item.data)
-    })
+    useEffect(() => {
+        axios
+          .get<Tools[]>(
+            'https://tt-jsonserver-01.alt-tools.tech/tools'
+          )
+          .then(res => setData(res.data))
+          .catch(err => {
+            console.error('Erreur API analytics', err);
+          });
+      }, []);
+
 
 
   return (
