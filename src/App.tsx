@@ -4,24 +4,28 @@ import { CardDashboard } from './components/CardDashboard/CardDashboard'
 import { HeaderDashboard } from './components/HeaderDashboard/HeaderDashboard'
 import { TableDashboard } from './components/TableDashboard/TableDashboard'
 import Tools from './pages/Tools'
+import { Box, Typography } from '@mui/material'
 
 
 function App() {
 
   return (
     <>
-      {/* Header TOUJOURS visible */}
       <HeaderDashboard />
-
-      {/* Contenu dynamique */}
       <Routes>
         <Route
           path="/"
           element={
-            <div className="cardContainer">
+            <>
+            <Box sx={{ color: 'grey' }}>
+              <Typography>Internal tools dashboard</Typography>
+              <Typography>Monitor and manage your organization's software tools and expenses</Typography>
+            </Box>
+            <div className="Container">
               <CardDashboard />
               <TableDashboard />
             </div>
+            </>
           }
         />
 

@@ -10,13 +10,12 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Container, Content, FlexBox } from './HeaderDashboard.styled';
-import BoltIcon from '@mui/icons-material/Bolt';
+import { Container, Content, CustomLink, CustomLinkLogo, CustomLogo, FlexBox, HeaderRightItem } from './HeaderDashboard.styled';
 import BedtimeIcon from '@mui/icons-material/Bedtime';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
-import { Link } from 'react-router-dom';
-// import { Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import InputField from '../InputField/InputField';
 
 export const HeaderDashboard = () => {
   const [open, setOpen] = React.useState(false);
@@ -60,23 +59,23 @@ export const HeaderDashboard = () => {
       <Button onClick={toggleDrawer(true)} sx={{display: { xs: 'block', sm: 'block', md: 'none', lg: 'none' }}}>Open drawer</Button>
       <Content  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>
         <FlexBox>
-            <Link to="/">
-                <BoltIcon/>
-                <span>TechCorp</span>
-            </Link>
-        </FlexBox>
-        <FlexBox>
-            <Link to="/">Dashboard</Link>
-            <Link to="/tools">Tools</Link>
-            <Link to="/analytics">Analytics</Link>
-            <Link to="/settings">Settings</Link>
+            <CustomLinkLogo to="/">
+                <CustomLogo/>
+                <Typography variant='h6'>TechCorp</Typography>
+            </CustomLinkLogo>
+            <CustomLink to="/">Dashboard</CustomLink>
+            <CustomLink to="/tools">Tools</CustomLink>
+            <CustomLink to="/analytics">Analytics</CustomLink>
+            <CustomLink to="/settings">Settings</CustomLink>
         </FlexBox>
       </Content>
       <Content  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>
-        <input type="text" />
-        <BedtimeIcon/>
-        <NotificationsIcon/>
-        <SettingsIcon/>
+        <HeaderRightItem>
+            <InputField/>
+            <BedtimeIcon sx={{ mr: '1rem' }}/>
+            <NotificationsIcon sx={{ mr: '1rem' }}/>
+            <SettingsIcon sx={{ mr: '1rem' }}/>
+        </HeaderRightItem>
       </Content>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
