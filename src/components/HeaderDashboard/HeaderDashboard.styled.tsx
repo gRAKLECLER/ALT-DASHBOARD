@@ -36,6 +36,10 @@ export const CustomLink = styled(Link)`
     margin-right: .8rem;
     display: flex;
     color: grey;
+
+    &:hover {
+    font-weight: bold; /* passe en gras au survol */
+  }
 `
 
 export const CustomLinkLogo = styled(CustomLink)`
