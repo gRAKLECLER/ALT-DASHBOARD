@@ -15,6 +15,7 @@ import BedtimeIcon from '@mui/icons-material/Bedtime';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Typography } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import InputField from '../InputField/InputField';
 
 export const HeaderDashboard = () => {
@@ -56,9 +57,11 @@ export const HeaderDashboard = () => {
 
   return (
     <Container>
-      <Button onClick={toggleDrawer(true)} sx={{display: { xs: 'block', sm: 'block', md: 'none', lg: 'none' }}}>Open drawer</Button>
+      <Button onClick={toggleDrawer(true)} sx={{display: { xs: 'block', sm: 'block', md: 'none', lg: 'none' }}}>
+        <MenuIcon/>
+      </Button>
       <Content  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>
-        <FlexBox>
+        <FlexBox sx={{display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' }}}>
             <CustomLinkLogo to="/">
                 <CustomLogo/>
                 <Typography variant='h6'>TechCorp</Typography>
@@ -70,7 +73,7 @@ export const HeaderDashboard = () => {
         </FlexBox>
       </Content>
       <Content  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>
-        <HeaderRightItem>
+        <HeaderRightItem sx={{display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' }}}>
             <InputField/>
             <BedtimeIcon sx={{ mr: '1rem' }}/>
             <NotificationsIcon sx={{ mr: '1rem' }}/>

@@ -5,6 +5,10 @@ import axios from 'axios';
 import type { Department } from '../../types/department';
 import type { Tools } from '../../types/tools';
 import { Container } from './CardDashboard.styled';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import BuildIcon from '@mui/icons-material/Build';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 
 
 
@@ -49,10 +53,10 @@ export const CardDashboard = () => {
   
     return (
       <Container>
-        <Card title='Monthly Budget' text={`${data?.budget_overview.current_month_total}/${data?.budget_overview.monthly_limit}`} data={data?.kpi_trends.budget_change ?? ''}/>
-        <Card title='Active tools' text={`${tools?.length}`} data={data?.kpi_trends.tools_change ?? ''}/>
-        <Card title='Department' text={`${departments?.length}`} data={data?.kpi_trends.departments_change ?? ''}/>
-        <Card title='Cost/User' text={`${data?.cost_analytics.cost_per_user}`} data={data?.kpi_trends.cost_per_user_change ?? ''}/>
+        <Card icon={<TrendingUpIcon/>} type={1} title='Monthly Budget' text={`${data?.budget_overview.current_month_total}/${data?.budget_overview.monthly_limit}`} data={data?.kpi_trends.budget_change ?? ''}/>
+        <Card icon={<BuildIcon/>} type={2} title='Active tools' text={`${tools?.length}`} data={data?.kpi_trends.tools_change ?? ''}/>
+        <Card icon={<ApartmentIcon/>} type={3}title='Department' text={`${departments?.length}`} data={data?.kpi_trends.departments_change ?? ''}/>
+        <Card icon={<PeopleOutlinedIcon/>} type={4} title='Cost/User' text={`€${data?.cost_analytics.cost_per_user}`} data={data?.kpi_trends.cost_per_user_change ?? ''}/>
       </Container>
     )
 }
