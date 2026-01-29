@@ -1,16 +1,18 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { MonthlySpendChart } from "../components/Charts/MonthlySpendChart/MonthlySpendChart"
+import type { DashboardAnalyticsResponse } from "../types/analytics";
+import { useDashboardAnalytics } from "../hooks/get/useDashboardAnalytics";
 
 
 function Analytics() {
-    // const [tools, setTools] = useState<ToolsType[]>()
 
-
-    // useEffect(() => {
-    
-          
-    //   }, []);
+  const { analytics } = useDashboardAnalytics();
 
     return (
-        <p>tutu</p>
+      <>
+        <MonthlySpendChart data={analytics}/>
+      </>
     )
 
   }

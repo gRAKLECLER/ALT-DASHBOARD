@@ -10,13 +10,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Container, Content, CustomLink, CustomLinkLogo, CustomLogo, FlexBox, HeaderRightItem } from './HeaderDashboard.styled';
-import BedtimeIcon from '@mui/icons-material/Bedtime';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import SettingsIcon from '@mui/icons-material/Settings';
+import { Container, Content, CustomLink, CustomLinkLogo, CustomLogo, FlexBox } from './HeaderDashboard.styled';
 import { Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import InputField from '../InputField/InputField';
 
 export const HeaderDashboard = () => {
   const [open, setOpen] = React.useState(false);
@@ -72,14 +68,14 @@ export const HeaderDashboard = () => {
             <CustomLink to="/settings">Settings</CustomLink>
         </FlexBox>
       </Content>
-      <Content  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>
+      {/* <Content  sx={{display: { xs: 'none', sm: 'none', md: 'block', lg: 'block' }}}>
         <HeaderRightItem sx={{display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' }}}>
             <InputField/>
             <BedtimeIcon sx={{ mr: '1rem' }}/>
             <NotificationsIcon sx={{ mr: '1rem' }}/>
             <SettingsIcon sx={{ mr: '1rem' }}/>
         </HeaderRightItem>
-      </Content>
+      </Content> */}
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
