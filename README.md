@@ -1,7 +1,3 @@
-Parfait ! Je vais te rédiger un **README complet et professionnel** pour ton projet `alt-dashboard`, en intégrant : introduction, état des lieux, stack, dépendances, commandes, architecture, design system, navigation, data integration, responsive, tests, et recommandations. Voici une version prête à l’emploi :
-
----
-
 # Alt Dashboard
 
 ![Dashboard Screenshot](./screenshot.png) *(Ajouter un screenshot si possible)*
@@ -146,6 +142,30 @@ src/
 ├── styles/           # Tailwind config, global styles
 └── App.tsx           # Routing et layout global
 ```
+
+---
+
+## ⚙️ Choix techniques pour le CSS
+
+Pour le styling du projet, Tailwind CSS a été utilisé comme base pour le design system et la rapidité de mise en place des layouts et des utilities. Cependant, pour certains composants complexes du dashboard, comme les liens personnalisés, boutons interactifs ou certains éléments des tables et cards, j’ai choisi d’utiliser MUI et styled-components.
+
+Les raisons principales sont :
+
+MUI (Material UI)
+
+Fournit une bibliothèque de composants prêts à l’emploi avec un design moderne et cohérent.
+
+Idéal pour les éléments interactifs comme les menus, avatars, badges et formulaires avec validation.
+
+Permet un gain de temps important pour un dashboard complexe, tout en restant personnalisable via le theme.
+
+Styled-components
+
+Offre une gestion fine du style au composant avec des props dynamiques et des pseudo-classes (:hover, :active).
+
+Facilite les animations et transitions CSS directement dans le composant React.
+
+Permet de coordonner le design system avec Tailwind pour les styles globaux, tout en gardant des composants isolés et réutilisables.
 
 ---
 
