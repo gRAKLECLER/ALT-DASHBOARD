@@ -17,8 +17,3 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-.link > a {
-  text-decoration: none;
-}

@@ -13,6 +13,7 @@ export const useDashboardAnalytics = () => {
         setLoading(true);
         const response = await axios.get<DashboardAnalyticsResponse>('https://tt-jsonserver-01.alt-tools.tech/analytics');
         setAnalytics(response.data);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: any) {
         console.error('Erreur API analytics', err);
         setError(err.message || 'Unknown error');
